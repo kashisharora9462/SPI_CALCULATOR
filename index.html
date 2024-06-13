@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPI Calculator!!</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <a href="https://www.iiitg.ac.in/" target="_blank"><img src="logo (2).png" alt="IIIT Guwahati logo" class="slidebar-logo">
+                </a>
+            <i id="close" class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <div class="second">
+            <ul>
+                <li><a href="#" onclick="selectSemester(1)">Semester 1</a></li>
+            <li><a href="#" onclick="selectSemester(2)">Semester 2</a></li>
+            <li><a href="#" onclick="selectSemester(3)">Semester 3</a></li>
+            <li><a href="#" onclick="selectSemester(4)">Semester 4</a></li>
+            <li><a href="#" onclick="selectSemester(5)">Semester 5</a></li>
+            <li><a href="#" onclick="selectSemester(6)">Semester 6</a></li>
+            <li><a href="#" onclick="selectSemester(7)">Semester 7</a></li>
+            <li><a href="#" onclick="selectSemester(8)">Semester 8</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div id="icon" class="icon"><i class="fa fa-bars"></i></div>
+            <h1>Indian Institute of Information Technology Guwahati</h1>
+        </div>
+        <div class="main">
+            <div class="first">
+                <h1 id="semester">SEMESTER 1 (CSE) </h1>
+                <label for="branch">Select Branch </label>
+                <select name="branch" id="branch">
+                    
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+
+                </select>
+            </div>
+            <div class="second">
+                <table id="table">
+                    <caption>Enter your best and least expected grade for each subject (between AA and DD), and hit the
+                        'Calculate SPI' button.</caption>
+                    <thead>
+                        <th>S.No.</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Least Grade</th>
+                        <th>Best Grade</th>
+                    </thead>
+                    <tbody>
+                        <!-- updated dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total credits</td>
+                            <td id="credit-total"></td>
+                            <td id="best-credit-total"></td>
+                            <td id="least-credit-total"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Expected SPI</td>
+                            <td id="best-spi"></td>
+                    <td id="least-spi"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="button">
+                <button onclick="calculateSPI()">Calculate SPI </button>
+            </div>
+        </div>
+    </div>
+  
+</body>
+<script src="semdata.js"></script>
+<script src="script.js"></script>
+</html>
