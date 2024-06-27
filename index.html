@@ -14,7 +14,7 @@
                 </a>
             <i id="close" class="fa-regular fa-circle-xmark"></i>
         </div>
-        <div class="second">
+        <div class="second1">
             <ul>
                 <li><a href="#" onclick="selectSemester(1)">Semester 1</a></li>
             <li><a href="#" onclick="selectSemester(2)">Semester 2</a></li>
@@ -32,6 +32,11 @@
             <div id="icon" class="icon"><i class="fa fa-bars"></i></div>
             <h1>Indian Institute of Information Technology Guwahati</h1>
         </div>
+
+        <div id="box">
+            <input id="target" type="text" placeholder="Enter your Target CPI ">
+            <button>CALCULATE</button>
+        </div>
         <div class="main">
             <div class="first">
                 <h1 id="semester">SEMESTER 1 (CSE) </h1>
@@ -43,6 +48,7 @@
 
                 </select>
             </div>
+         
             <div class="second">
                 <table id="table">
                     <caption>Enter your best and least expected grade for each subject (between AA and DD), and hit the
@@ -73,8 +79,14 @@
                 </table>
             </div>
             <div class="button">
-                <button onclick="calculateSPI()">Calculate SPI </button>
+                <button id="calculate-button">Calculate SPI</button>
             </div>
+            
+            <div id="targetcpi">
+                <h4>Want to know how much SPI you need next semester to reach your target CPI? Enter your goal below and find out!</h4>
+                    <a id="targetcalculate" href="#">Click here</a>
+            </div>
+       
         </div>
     </div>
   

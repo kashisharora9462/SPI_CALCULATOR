@@ -93,13 +93,16 @@ h1{
     cursor: pointer;
     
 }
-
-
 .second{
     display: flex;
     justify-content: center;
 }
-.second ul li a{
+
+.second1{
+    display: flex;
+    justify-content: center;
+}
+.second1 ul li a{
     font-weight: 400;
     display: flex;
     font-size: 1.5vw;
@@ -109,13 +112,13 @@ h1{
     margin: 20px;
 }
 
-.second ul li a :hover{
+.second1 ul li a :hover{
    background: transition(aliceblue rgb(175, 190, 203));
    color: #5A72A0;
    font-weight: bold;
 }
 
-.second ul li{
+.second1 ul li{
     list-style-type: none;
 }
 
@@ -163,4 +166,48 @@ tfoot {
  button:hover{
     background: linear-gradient(rgb(42, 42, 118) , #2267e8 );
     color: #FDFFE2;
+}
+
+#targetcpi{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#targetcpi h4{
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+#targetcpi a{
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #4464a0;
+    font-weight: bold;
+}
+
+#box{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#box input{
+    background-color: #1A2130;
+    color: white;
+    padding: 10px;
+}
+
+#box button{
+    margin-top: 10px;
+    padding: 5px;
+    color: #1A2130;
+    background:linear-gradient(white, #5A72A0);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }

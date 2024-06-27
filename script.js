@@ -39,6 +39,7 @@ function selectSemester(semester) {
     document.getElementById('least-credit-total').textContent = '';
     document.getElementById('best-spi').textContent = '';
     document.getElementById('least-spi').textContent = '';
+    
 }
 
 function updateTable() {
@@ -88,14 +89,37 @@ function calculateSPI() {
     document.getElementById('least-credit-total').textContent = leastcreditTotal.toFixed(1);
     document.getElementById('best-spi').textContent = bestSPI.toFixed(2);
     document.getElementById('least-spi').textContent = leastSPI.toFixed(2);
+
+    const targetcpi = document.getElementById('targetcpi');
+    targetcpi.style.display = "flex"; // Show the targetcpi section after calculating SPI
+
+    const main = document.querySelector('.main');
+    main.style.display = "flex"; // Show the second (table) section after calculating SPI
 }
+
+
+function target() {
+    
+
+    const main = document.querySelector('.main');
+    main.style.display = "none"; 
+
+    const box = document.getElementById('box');
+    box.style.display = "flex"; // Show the box section
+
+    const targetInput = document.getElementById('target');
+    targetInput.focus(); // Focus on the input field for CPI
+}
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     updateTable();
 
     const icon = document.getElementById('icon');
     const close = document.getElementById('close');
-  
+    const calculateButton = document.getElementById('calculate-button');
+    const targetCalculate = document.getElementById('targetcalculate');
    
     icon.addEventListener("click", open_sidebar); // open sidebar
     close.addEventListener("click", close_sidebar); // close sidebar 
@@ -107,12 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('branch').addEventListener('change', function() {
         updateTable();
     });
+     // Event listener for calculate button
+     calculateButton.addEventListener('click', calculateSPI);
+     
 
-    // // Event listener for semester change
-    // document.querySelectorAll('.nav-item').forEach(button => {
-    //     button.addEventListener('click', function() {
-    //         const semester = parseInt(this.textContent);
-    //         selectSemester(semester);
-    //     });
-    // });
+        // Event listener for target CPI link
+        targetCalculate.addEventListener('click', target);
+
 });
