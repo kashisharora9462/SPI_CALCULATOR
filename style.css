@@ -12,8 +12,9 @@ html, body {
 }
 
 .container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 ,10px;
 }
 
 .header {
@@ -105,7 +106,7 @@ h1{
 .second1 ul li a{
     font-weight: 400;
     display: flex;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     align-items: center;
     text-decoration: none;
     color: rgb(9, 9, 76);
@@ -210,4 +211,45 @@ tfoot {
     border-radius: 50px;
     cursor: pointer;
     margin-bottom: 10px;
+}
+
+@media (max-width:600px) {
+  .header{
+    
+    font-size: 1.5vw;
+  }
+  .header #icon{
+    font-weight: 800;
+    font-size: 3vw;
+  }
+
+  .first{
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .first h1{
+    margin-top: 10px;
+  }
+
+  label{
+    margin-right: 50px;
+    margin-left: 210px;
+    font-size: 3.1vw;
+  }
+  #branch{
+    margin-left: 210px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    width: 50px;
+  }
+  .sidebar{
+    width: 80px;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+
+    
 }
