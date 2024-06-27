@@ -111,7 +111,16 @@ function target() {
     targetInput.focus(); // Focus on the input field for CPI
 }
 
+function showtarget(){
+    const target1=document.getElementById('target').textContent;
+    const csemester=document.getElementById('csemester').textContent;
+    const currentcpi=document.getElementById('currentcpi').textContent;
 
+    var total_credit_till_n_semester=totalCredit(csemester+1);
+    var total_credit_till_n_1_semester=totalCredit(csemester);
+    var n_credit_semester=total_credit_till_n_semester-total_credit_till_n_1_semester;
+    
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     updateTable();
@@ -124,8 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
     icon.addEventListener("click", open_sidebar); // open sidebar
     close.addEventListener("click", close_sidebar); // close sidebar 
    
+  
+    const button=document.getElementById('findspi');
 
-    
+    button.addEventListener('click',showtarget);
+
 
     // Event listener for branch change
     document.getElementById('branch').addEventListener('change', function() {
