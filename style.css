@@ -249,6 +249,12 @@ tfoot {
     padding: 5px;
     font-weight: bold;
   }
+
+  #targetcpi {
+    font-size: 1.8vw;
+    padding: 5px;
+  }
+  
   
 
     
