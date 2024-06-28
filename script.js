@@ -111,15 +111,56 @@ function target() {
     targetInput.focus(); // Focus on the input field for CPI
 }
 
-function showtarget(){
-    const target1=document.getElementById('target').textContent;
-    const csemester=document.getElementById('csemester').textContent;
-    const currentcpi=document.getElementById('currentcpi').textContent;
+function getTotalCredit(department, n) {
+    let totalCredits = 0;
 
-    var total_credit_till_n_semester=totalCredit(csemester+1);
-    var total_credit_till_n_1_semester=totalCredit(csemester);
-    var n_credit_semester=total_credit_till_n_semester-total_credit_till_n_1_semester;
-    
+    for (let semester = 1; semester <= n; semester++) {
+        if (data[department][semester]) {
+            data[department][semester].forEach(subject => {
+                totalCredits += subject.credit;
+            });
+        }
+    }
+
+    return totalCredits;
+}
+
+function showtarget(){
+   // Get values from input fields
+   var targetCPI = parseFloat(document.getElementById('target').value);
+   var currentCPI = parseFloat(document.getElementById('currentcpi').value);
+   var currentSemester = parseInt(document.getElementById('csemester').value, 10);
+   var department = document.getElementById('branch1').value.trim().toUpperCase();
+
+   if(currentSemester<1 || currentSemester>7){
+    alert('Enter a valid Semester between 1 to 7');
+   }
+
+   if(targetCPI<1 || targetCPI>10){
+    alert('Enter a valid CPI');
+   }
+
+   if(currentCPI<1 || currentCPI>10){
+    alert('Enter a valid current CPI');
+   }
+
+   
+   var n=currentSemester;
+
+   var totalCredit_n_semester=getTotalCredit(department,n+1);
+   var totalCredit_n_1_semester=getTotalCredit(department,n);
+   var nth_semester_credit= totalCredit_n_semester-totalCredit_n_1_semester;
+
+   const first=(totalCredit_n_semester*targetCPI) - (currentCPI*totalCredit_n_1_semester);
+
+   const targetSPI = first/nth_semester_credit;
+
+   if(targetSPI>10||targetSPI<0){
+    alert(`This target is not achievable as per your current ${currentCPI} Cpi `);
+   }
+   else{
+    alert(`You have to target ${targetSPI.toFixed(2)} to get your ${targetCPI} CPI `);
+   }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -134,9 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
     close.addEventListener("click", close_sidebar); // close sidebar 
    
   
-    const button=document.getElementById('findspi');
-
-    button.addEventListener('click',showtarget);
+    document.getElementById('findspi').addEventListener('click', showtarget);
+    
 
 
     // Event listener for branch change
