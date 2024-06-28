@@ -96,8 +96,8 @@ function calculateSPI() {
     const main = document.querySelector('.main');
     main.style.display = "flex"; // Show the second (table) section after calculating SPI
 
-    const button=document.getElementById('calculate-button');
-    button.style.display="none";
+    const calculateButton = document.getElementById('calculate-button');
+    calculateButton.style.display="none";
 }
 
 
