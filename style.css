@@ -245,9 +245,7 @@ tfoot {
     flex-direction: column;
 
   }
-  .first h1{
-    margin-top: 2vh;
-  }
+ 
 
   label{
     font-size: 3.1vw;
