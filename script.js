@@ -95,6 +95,9 @@ function calculateSPI() {
 
     const main = document.querySelector('.main');
     main.style.display = "flex"; // Show the second (table) section after calculating SPI
+
+    const button=document.getElementById('calculate-button');
+    button.style.display="none";
 }
 
 
@@ -109,6 +112,8 @@ function target() {
 
     const targetInput = document.getElementById('target');
     targetInput.focus(); // Focus on the input field for CPI
+
+   
 }
 
 function getTotalCredit(department, n) {
