@@ -21,8 +21,9 @@ html, body {
     height: 10%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    text-align: center;
     
 }
 
@@ -35,25 +36,23 @@ html, body {
 .first{
     height: 20%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 }
 label{
-    margin-right: 10px;
-    margin-left: 650px;
-    align-items: center;
-    
+    margin-bottom: 2vh;
 }
 
 #icon {
     color: #FDFFE2;
-    margin-left: 20px;
     cursor: pointer;
-    margin-top: 40px;
+    
 }
 h1{
     text-align: center;
-    margin: auto;
-    margin-top: 40px;
 }
 
 #semester{
@@ -153,7 +152,6 @@ tfoot {
     color: white;
     margin-right: 52px;
     cursor: pointer;
-    margin-top: 40px;
 }
 
 .button{
@@ -239,7 +237,6 @@ tfoot {
   .header #icon{
     font-weight: 800;
     font-size: 3vw;
-    margin-top: 6vh;
   }
 
   .first{
@@ -253,15 +250,11 @@ tfoot {
   }
 
   label{
-    margin-right: 50px;
-    margin-left: 40vw;
     font-size: 3.1vw;
   }
 
   #branch{
-    margin-left: 40vw;
-    margin-top: 2vw;
-    margin-bottom: 40px;
+    margin-bottom: 2vh;
     width: 50px;
   }
   .sidebar{
@@ -288,15 +281,6 @@ tfoot {
   #box .right{
    display: none;
   }
-
-  .header #back{
-    margin-top: 7vh;
-  }
-
- 
- 
-  
-  
 
     
 }
